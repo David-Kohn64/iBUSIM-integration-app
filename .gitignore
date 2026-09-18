@@ -1,0 +1,14 @@
+# .NET
+**/bin/
+**/obj/
+
+# Frontend
+**/node_modules/
+**/dist/
+
+# Local settings
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
