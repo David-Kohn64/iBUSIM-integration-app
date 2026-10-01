@@ -1,8 +1,14 @@
 export function OperatorInterface() {
     return (
-        <main>
-        <h1>Operator Interface</h1>
-        </main>
+        <button
+            id="square-action"
+            style={{
+                width: 50,
+                height: 50,
+                padding: 0,
+                borderRadius: 0
+            }}
+        />
     )
 }
 
