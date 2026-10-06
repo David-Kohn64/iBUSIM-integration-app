@@ -8,11 +8,11 @@ Web app connecting Binghamton University's BUSIM flight simulator cockpit hardwa
 
 ## Run the backend
 
-cd backend/iBUSIM.Api
-dotnet run
+- cd backend/iBUSIM.Runtime
+- dotnet run
 
 ## Run the frontend
 
-cd frontend
-npm install
-npm run dev
+- cd frontend
+- npm install
+- npm run dev
