@@ -14,9 +14,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
-
-
+app.MapPost("/api/operator/stop", (ILogger<Program> logger) =>
+{
+    logger.LogInformation("Stop button clicked");
+    return Results.NoContent();
+});
 
 app.Run();
-
