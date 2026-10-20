@@ -42,7 +42,6 @@ export function OperatorInterface() {
                 </div>
             </main>
         </div>
->>>>>>> d9820b29bd1749cef1a1853cb543cc7bb1ff04ca
     )
 }
 
