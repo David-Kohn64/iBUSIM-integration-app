@@ -6,9 +6,12 @@ export function OperatorInterface() {
                 width: 50,
                 height: 50,
                 padding: 0,
-                borderRadius: 0
+                borderRadius: 0,
+                fontSize: 12
             }}
-        />
+        >
+            Stop
+        </button>
     )
 }
 
