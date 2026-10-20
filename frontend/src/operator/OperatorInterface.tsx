@@ -13,7 +13,7 @@ export function OperatorInterface() {
                 <div className="operator-header-actions">
                     <button
                         id="square-action"
-                        onClick={() => fetch("/api/operator/stop", { method: "POST" })}
+                        onClick={() => fetch("/api/stop", { method: "POST" })}
                         style={{
                             width: 50,
                             height: 50,
