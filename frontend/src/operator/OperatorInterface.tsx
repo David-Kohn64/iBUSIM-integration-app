@@ -2,6 +2,7 @@ import "./OperatorInterface.css"
 
 export function OperatorInterface() {
     return (
+
         <div className="operator-page">
             <header className="operator-header">
                 <div className="operator-brand">
@@ -10,7 +11,19 @@ export function OperatorInterface() {
                 </div>
 
                 <div className="operator-header-actions">
-                    {/* Stop Button should go here. */}
+                    <button
+                        id="square-action"
+                        onClick={() => fetch("/api/stop", { method: "POST" })}
+                        style={{
+                            width: 50,
+                            height: 50,
+                            padding: 0,
+                            borderRadius: 0,
+                            fontSize: 12
+                        }}
+                    >
+                        Stop
+                    </button>
                 </div>
             </header>
 
