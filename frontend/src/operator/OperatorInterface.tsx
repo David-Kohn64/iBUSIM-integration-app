@@ -1,4 +1,6 @@
 import "./OperatorInterface.css"
+import { CockpitPanel } from "./panels/CockpitPanel"
+import { StatusPanel } from "./panels/StatusPanel"
 import { stopRuntime } from "../api/runtimeApi";
 
 export function OperatorInterface() {
@@ -28,11 +30,11 @@ export function OperatorInterface() {
 
                 <div className="operator-layout">
                     <section className="operator-status">
-                        {/* Status panel goes here */}
+                        <StatusPanel />
                     </section>
 
                     <section className="operator-cockpit">
-                        {/* Cockpit controls go here */}
+                        <CockpitPanel />
                     </section>
                 </div>
             </main>
