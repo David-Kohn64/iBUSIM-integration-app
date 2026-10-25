@@ -1,4 +1,5 @@
 import "./OperatorInterface.css"
+import { stopRuntime } from "../api/runtimeApi";
 
 export function OperatorInterface() {
     return (
@@ -12,15 +13,8 @@ export function OperatorInterface() {
 
                 <div className="operator-header-actions">
                     <button
-                        id="square-action"
-                        onClick={() => fetch("/api/stop", { method: "POST" })}
-                        style={{
-                            width: 50,
-                            height: 50,
-                            padding: 0,
-                            borderRadius: 0,
-                            fontSize: 12
-                        }}
+                        id="operator-stop-button"
+                        onClick={stopRuntime}
                     >
                         Stop
                     </button>
