@@ -14,7 +14,7 @@
 - Generate MonitorSetup Lua for the Left DDI, Right DDI, and AMPCD.
 - Install or replace current script into the DCS MonitorSetup directory
 
-### DisplayEndpoints.cs - Called by runtimeApi.ts
+### DisplayEndpoints.cs - Registered by Program.cs, Called by runtimeApi.ts
 
 - All API endpoints used by Display frontend 
 
