@@ -14,9 +14,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
-
-
+app.MapOperatorEndpoints();
 
 app.Run();
-

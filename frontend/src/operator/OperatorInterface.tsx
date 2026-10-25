@@ -1,9 +1,11 @@
 import "./OperatorInterface.css"
 import { CockpitPanel } from "./panels/CockpitPanel"
 import { StatusPanel } from "./panels/StatusPanel"
+import { stopRuntime } from "../api/runtimeApi";
 
 export function OperatorInterface() {
     return (
+
         <div className="operator-page">
             <header className="operator-header">
                 <div className="operator-brand">
@@ -12,7 +14,12 @@ export function OperatorInterface() {
                 </div>
 
                 <div className="operator-header-actions">
-                    {/* Stop Button should go here. */}
+                    <button
+                        id="operator-stop-button"
+                        onClick={stopRuntime}
+                    >
+                        Stop
+                    </button>
                 </div>
             </header>
 
