@@ -7,12 +7,12 @@ public sealed class IntegrationRuntime
 
     public CockpitOutputSnapshot ApplySnapshot(CockpitControlSnapshot snapshot)
     {
-          
+        throw new NotImplementedException(); //Remove
     }
 
     public CockpitOutputSnapshot ApplyUpdate(CockpitControlUpdate update)
     {
-          
+        throw new NotImplementedException(); 
     }
 
     

@@ -7,21 +7,21 @@ public sealed class CockpitSimulator(SimulationScenario scenario) : ICockpitDevi
     {
         cancellationToken.ThrowIfCancellationRequested(); 
 
-        return Task.FromResult();
+        throw new NotImplementedException(); //Remove
     }
 
     public IAsyncEnumerable<CockpitControlUpdate> ReadUpdatesAsync(CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        yield return ;
+        throw new NotImplementedException();
     }
 
     public Task SendOutputsAsync(CockpitOutputSnapshot outputs, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        return Task.CompletedTask;
+        throw new NotImplementedException();
     }
 
 }
