@@ -13,30 +13,11 @@ public sealed class CockpitWorker(
         try
         {
 
-            await foreach (
-                CockpitControlUpdate update in cockpitDevice.ReadUpdatesAsync(stoppingToken)
-            )
-            {
-                logger.LogInformation("Cockpit control update received");
-
-                CockpitOutputSnapshot cockpitOutputSnapshot = integrationRuntime.ApplyUpdate(update);
-
-                logger.LogInformation("Cockpit output updated. IndicatorLightOn: {LightStatus}, TelemetryValue: {TelemetryValue}",
-                cockpitOutputSnapshot.IndicatorLightOn, cockpitOutputSnapshot.TelemetryValue);
-
-                await cockpitDevice.SendOutputsAsync(cockpitOutputSnapshot, stoppingToken);
-
-                logger.LogInformation("Cockpit output successfully sent to device")
-            }
-
+            await Task.Delay(Timeout.InfiniteTimeSpan, stoppingToken);
         }
         catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
         {
             // Normal application shutdown.
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "Cockpit worker failed");
         }
 
         logger.LogInformation("Cockpit worker stopped");
