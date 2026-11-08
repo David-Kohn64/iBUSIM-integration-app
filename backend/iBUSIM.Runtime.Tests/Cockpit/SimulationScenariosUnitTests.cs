@@ -6,6 +6,9 @@ namespace iBUSIM.Runtime.Tests.Cockpit;
 public class SimulationScenariosTests
 {
     // Tests that all simulation scenarios in SimulationScenarios.cs are initialized.
+    // To run, type the following command:
+    // dotnet test backend/iBUSIM.Runtime.Tests
+
     [Fact]
     public void Scenario1_IsNotNull()
     {
