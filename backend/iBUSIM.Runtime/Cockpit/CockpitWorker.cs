@@ -26,7 +26,7 @@ public sealed class CockpitWorker(
 
                 await cockpitDevice.SendOutputsAsync(cockpitOutputSnapshot, stoppingToken);
 
-                logger.LogInformation("Cockpit output successfully sent to device")
+                logger.LogInformation("Cockpit output successfully sent to device");
             }
 
         }
