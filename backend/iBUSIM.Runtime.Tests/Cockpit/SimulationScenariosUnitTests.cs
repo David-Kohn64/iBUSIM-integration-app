@@ -1,4 +1,3 @@
-using Xunit;
 using iBUSIM.Runtime.Cockpit;
 
 namespace iBUSIM.Runtime.Tests.Cockpit;
