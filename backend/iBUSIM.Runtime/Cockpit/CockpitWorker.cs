@@ -12,6 +12,10 @@ public sealed class CockpitWorker(
 
         try
         {
+            //sends initial snapshot to Integration Runtime and passes outputs to Cockpit Device
+            CockpitControlSnapshot initialSnapshot = await cockpitDevice.ConnectAsync(stoppingToken);
+            CockpitOutputSnapshot initialOutputs = integrationRuntime.ApplySnapshot(initialSnapshot); //Outputs will not be sent this way in future
+            await cockpitDevice.SendOutputsAsync(initialOutputs, stoppingToken); 
 
             await foreach (
                 CockpitControlUpdate update in cockpitDevice.ReadUpdatesAsync(stoppingToken)
@@ -26,7 +30,7 @@ public sealed class CockpitWorker(
 
                 await cockpitDevice.SendOutputsAsync(cockpitOutputSnapshot, stoppingToken);
 
-                logger.LogInformation("Cockpit output successfully sent to device")
+                logger.LogInformation("Cockpit output successfully sent to device");
             }
 
         }
