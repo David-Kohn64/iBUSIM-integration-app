@@ -12,9 +12,12 @@ public sealed class CockpitWorker(
 
         try
         {
-            //sends initial snapshot to Integration Runtime and passes outputs to Cockpit Device
-            CockpitControlSnapshot initialSnapshot = await cockpitDevice.ConnectAsync(stoppingToken);
-            CockpitOutputSnapshot initialOutputs = integrationRuntime.ApplySnapshot(initialSnapshot); //Outputs will not be sent this way in future
+            CockpitControlSnapshot initialSnapshot = await cockpitDevice.ConnectAsync(stoppingToken); // Get Control Snapshot From Cockpit Simulator
+            logger.LogInformation("Cockpit Snapshot Recieved");
+            ArgumentNullException.ThrowIfNull(initialSnapshot); // Throw Acception If No Snapshot
+            CockpitOutputSnapshot initialOutputs = integrationRuntime.ApplySnapshot(initialSnapshot); // Give Snapshot To Integration Runtime
+            logger.LogInformation("Cockpit Snapshot Applied To Runtime");
+
             await cockpitDevice.SendOutputsAsync(initialOutputs, stoppingToken); 
 
             await foreach (
